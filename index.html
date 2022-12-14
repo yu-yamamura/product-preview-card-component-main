@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -21,8 +20,45 @@
     <link rel="stylesheet" href="./dist/output.css" />
     <title>Frontend Mentor | Product preview card component</title>
   </head>
-
-  <body>
-    <h1 class="text-3xl font-bold underline">Hello World!</h1>
+  <body class="h-screen w-screen bg-cream text-sm text-darkGrayishBlue">
+    <!-- adjust max-width to iPhone SE for mobile screen -->
+    <main
+      class="mx-auto flex h-full max-w-sm flex-col justify-center px-4 md:max-w-xl md:px-0"
+    >
+      <div
+        class="flex flex-col overflow-hidden rounded-xl bg-white md:flex-row"
+      >
+        <!-- product image area -->
+        <picture class="md:w-1/2">
+          <source
+            media="(min-width: 768px)"
+            srcset="./images/image-product-desktop.jpg"
+          />
+          <img src="./images/image-product-mobile.jpg" />
+        </picture>
+        <!-- product content area -->
+        <div class="px-8 py-4 md:w-1/2">
+          <div class="uppercase tracking-widest md:mt-4">perfume</div>
+          <h2 class="my-2 font-fraunces text-3xl text-black md:my-6">
+            Gabrielle Essence Eau De Parfum
+          </h2>
+          <p class="my-4">
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL
+          </p>
+          <div class="my-4 flex items-center gap-4">
+            <div class="font-fraunces text-3xl text-darkCyan">$149.99</div>
+            <div class="line-through">$169.99</div>
+          </div>
+          <button
+            type="button"
+            class="flex w-full items-center justify-center gap-4 rounded-lg border-none bg-darkCyan py-3 text-base font-bold text-white outline-none duration-700 hover:bg-veryDarkCyan focus:bg-veryDarkCyan"
+          >
+            <img src="./images/icon-cart.svg" alt="cart icon" />
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
